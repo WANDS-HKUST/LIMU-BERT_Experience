@@ -36,7 +36,7 @@ Deployed with Ele.me over two years, LIMU-BERT-X now supports **500,000 couriers
 
 This project has been accepted to 📄 **[MobiCom 2025 Experience Paper](https://dl.acm.org/doi/10.1145/3680207.3765261)** and we open-source the pretrained LIMU-BERT model—trained on **1.43 million hours** of sensor data from 60K couriers and 1.1K phone models—providing a strong foundation for future research in mobile sensing and ubiquitous computing.
 
-This repository builds upon our earlier open-source implementation **[LIMU-BERT-Public](https://github.com/dapowan/LIMU-BERT-Public)**, which contains the official source code of our paper *LIMU-BERT*, published at 📄 **ACM SenSys 2021** and awarded 🏆 **Best Paper Runner-Up**. LIMU-BERT_Experience extends this foundation with large-scale real-world deployment, additional datasets, and industry-level model optimization.
+This repository builds upon our earlier open-source implementation **[LIMU-BERT-Public](https://github.com/dapowan/LIMU-BERT-Public)**, which contains the official source code of our paper *LIMU-BERT*, published at 📄 **ACM SenSys 2021** and awarded 🏆 **Best Paper Runner-Up**. LIMU-BERT-X extends this foundation with large-scale real-world deployment, additional datasets, and industry-level model optimization.
 
 
 ---
