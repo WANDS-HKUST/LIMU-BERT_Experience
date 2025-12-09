@@ -2,15 +2,19 @@
   <img src="img/logo.png" alt="Project Logo" width="260" />
 </p>
 
-<h1 align="center">🚀 LIMU-BERT: A Foundation Model Pretrained with Nationwide Data</h1>
+<h1 align="center">🚀 LIMU-BERT_Experience: A Large-Scale Real-World Sensor Foundation Model</h1>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Python-3.8%2B-blue"></a>
   <a href="#"><img src="https://img.shields.io/badge/License-MIT-green"></a>
   <a href="https://github.com/WANDS-HKUST/LIMU-BERT_Experience">
-  <img src="https://img.shields.io/github/stars/WANDS-HKUST/LIMU-BERT_Experience?style=social">
-</a>
+    <img src="https://img.shields.io/github/stars/WANDS-HKUST/LIMU-BERT_Experience?style=social">
+  </a>
+  <a href="https://dl.acm.org/doi/10.1145/3680207.3765261">
+    <img src="https://img.shields.io/badge/Paper-MobiCom%202025-ff69b4?logo=academia&logoColor=white">
+  </a>
 </p>
+
 
 ---
 
@@ -25,9 +29,9 @@ Deployed with Ele.me over two years, LIMU-BERT now supports **500,000 couriers a
 - ⏱️ **Improved ETA/ETS prediction**, reducing time estimation errors across millions of orders  
 - 💰 **Dynamic and fair pricing**, contributing to **0.44 billion RMB annual cost savings**
 
-This repository open-sources the pretrained LIMU-BERT model—trained on **1.43 million hours** of sensor data from 60K couriers and 1.1K phone models—providing a strong foundation for future research in mobile sensing and ubiquitous computing.
+This project has been accepted to 📄 **[MobiCom 2025 Experience Paper](https://dl.acm.org/doi/10.1145/3680207.3765261)** and we open-sources the pretrained LIMU-BERT model—trained on **1.43 million hours** of sensor data from 60K couriers and 1.1K phone models—providing a strong foundation for future research in mobile sensing and ubiquitous computing.
 
-This repository builds upon our earlier open-source implementation **[LIMU-BERT-Public](https://github.com/dapowan/LIMU-BERT-Public)**, which contains the official source code of our paper *LIMU-BERT*, published at **ACM SenSys 2021** and awarded **Best Paper Runner-Up**. LIMU-BERT_Experience extends this foundation with large-scale real-world deployment, additional datasets, and industry-level model optimization.
+This repository builds upon our earlier open-source implementation **[LIMU-BERT-Public](https://github.com/dapowan/LIMU-BERT-Public)**, which contains the official source code of our paper *LIMU-BERT*, published at 📄 **ACM SenSys 2021** and awarded 🏆 **Best Paper Runner-Up**. LIMU-BERT_Experience extends this foundation with large-scale real-world deployment, additional datasets, and industry-level model optimization.
 
 
 ---
