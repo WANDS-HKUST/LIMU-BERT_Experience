@@ -2,7 +2,7 @@
   <img src="img/logo.png" alt="Project Logo" width="260" />
 </p>
 
-<h1 align="center">🚀 LIMU-BERT_Experience: A Large-Scale Real-World Sensor Foundation Model</h1>
+<h1 align="center">🚀 LIMU-BERT-X: A Large-Scale Real-World IMU Sensor Foundation Model</h1>
 
 <p align="center">
   <a href="#" target="_blank" rel="noopener noreferrer">
@@ -25,9 +25,9 @@
 
 ## 📌 Introduction
 
-**LIMU-BERT_Experience** presents the first real-world, nationwide deployment of a **human activity recognition (HAR)** foundation model in the on-demand food delivery industry. Built on the LIMU-BERT sensor foundation model, this project demonstrates how large-scale IMU data, self-supervised learning, and lightweight on-device inference can transform operational decision-making at massive scale.
+**LIMU-BERT-X** presents the first real-world, nationwide deployment of a **human activity recognition (HAR)** foundation model in the on-demand food delivery industry. Built on the LIMU-BERT sensor foundation model, this project demonstrates how large-scale IMU data, self-supervised learning, and lightweight on-device inference can transform operational decision-making at massive scale.
 
-Deployed with Ele.me over two years, LIMU-BERT now supports **500,000 couriers across 367 cities**, making **7.5 billion on-device predictions per day**. Leveraging **858M+ unlabeled IMU samples** for pretraining and minimal labeled data, the system achieves **over 90% activity recognition accuracy** nationwide and powers multiple business-critical applications:
+Deployed with Ele.me over two years, LIMU-BERT-X now supports **500,000 couriers across 367 cities**, making **7.5 billion on-device predictions per day**. Leveraging **858M+ unlabeled IMU samples** for pretraining and minimal labeled data, the system achieves **over 90% activity recognition accuracy** nationwide and powers multiple business-critical applications:
 
 - 🚴 **Trajectory segmentation** for detecting riding, walking, and key delivery events  
 - ⬆️ **Elevation change detection** using IMU-only modeling  
@@ -59,7 +59,7 @@ In the meantime, you may refer to our previous open-source implementation **[LIM
 
 ## 📚 Citation
 
-If you find **LIMU-BERT_Experience** or **LIMU-BERT** useful in your research, please cite our papers:
+If you find **LIMU-BERT-X** or **LIMU-BERT** useful in your research, please cite our papers:
 
 ```bibtex
 @inproceedings{xu2025experience,
@@ -79,7 +79,7 @@ If you find **LIMU-BERT_Experience** or **LIMU-BERT** useful in your research, p
 }
 ```
 
-We also encourage you to refer to and cite our closely related **MobiCom 2023 paper [UniHAR](https://dl.acm.org/doi/abs/10.1145/3570361.3613299)**.
+We also encourage you to refer to and cite our closely related 📄 **MobiCom 2023 paper [UniHAR](https://dl.acm.org/doi/abs/10.1145/3570361.3613299)**.
 
 ```bibtex
 @inproceedings{xu2023practically,
