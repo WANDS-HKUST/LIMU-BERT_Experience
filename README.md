@@ -47,4 +47,55 @@ This repository builds upon our earlier open-source implementation **[LIMU-BERT-
 git clone https://github.com/WANDS-HKUST/LIMU-BERT_Experience.git
 cd LIMU-BERT_Experience
 pip install -r requirements.txt
+```
 
+## 📘 Instructions
+
+The detailed instructions for training, evaluation, and deployment will be **released soon**.
+
+In the meantime, you may refer to our previous open-source implementation **[LIMU-BERT-Public](https://github.com/dapowan/LIMU-BERT-Public)** for more details on model structure, preprocessing pipelines, and training procedures.
+
+---
+
+## 📚 Citation
+
+If you find **LIMU-BERT_Experience** or **LIMU-BERT** useful in your research, please cite our papers:
+
+```bibtex
+@inproceedings{xu2025experience,
+  title={Experience Paper: Adopting Activity Recognition in On-demand Food Delivery Business},
+  author={Xu, Huatao and Zhang, Yan and Gao, Wei and Shen, Guobin and Li, Mo},
+  booktitle={Proceedings of the 31st Annual International Conference on Mobile Computing and Networking},
+  pages={1015--1028},
+  year={2025}
+}
+
+@inproceedings{xu2021limu,
+  title={Limu-bert: Unleashing the potential of unlabeled data for imu sensing applications},
+  author={Xu, Huatao and Zhou, Pengfei and Tan, Rui and Li, Mo and Shen, Guobin},
+  booktitle={Proceedings of the 19th ACM Conference on Embedded Networked Sensor Systems},
+  pages={220--233},
+  year={2021}
+}
+```
+
+We also encourage you to refer to and cite our closely related **MobiCom 2023 paper [UniHAR](https://dl.acm.org/doi/abs/10.1145/3570361.3613299)**.
+
+```bibtex
+@inproceedings{xu2023practically,
+  title={Practically adopting human activity recognition},
+  author={Xu, Huatao and Zhou, Pengfei and Tan, Rui and Li, Mo},
+  booktitle={Proceedings of the 29th Annual International Conference on Mobile Computing and Networking},
+  pages={1--15},
+  year={2023}
+}
+```
+
+## 📬 Contact
+
+If you have questions, suggestions, or collaboration interests, feel free to reach out:
+
+- **Huatao Xu** — 735820057@qq.com  
+- Or open an issue or pull request in this repository.
+
+We welcome contributions from the community!
