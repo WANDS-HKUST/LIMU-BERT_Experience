@@ -76,7 +76,7 @@ python pretrain.py v4 hhar 20_120 -s limu_v1 -f limu_bert_x
 
 This command fine-tunes LIMU-BERT-X using the configuration defined in the the _based_v4_ of [limu_bert.json](./config/limu_bert.json), with the hhar dataset "data_20_120.npy" and "label_20_120.npy". The trained model will be saved as "limu_v1.pt" in the _saved/pretrain_base_hhar_20_120_ folder. The mask and train settings are defined in the [mask.json](./config/mask.json) and [pretrain.json](./config/pretrain.json), respectively.
 
-Note that **LIMU-BERT-X** uses a sequence length of **20**, which is slightly different from the original **LIMU-BERT**, which uses a sequence length of **120**.
+Note that **LIMU-BERT-X** uses a sequence length of **20**, which is different from the original **LIMU-BERT**, which uses a sequence length of **120**.
 
 ---
 
@@ -102,7 +102,7 @@ If you find **LIMU-BERT-X** or **LIMU-BERT** useful in your research, please cit
 }
 ```
 
-We also encourage you to refer to and cite our closely related 📄 **MobiCom 2023 paper [UniHAR](https://dl.acm.org/doi/abs/10.1145/3570361.3613299)**.
+We also encourage you to refer to and cite our closely related 📄 **MobiCom 2023 paper [UniHAR](https://dl.acm.org/doi/abs/10.1145/3570361.3613299)** that proposes **physics-informed data augmentation** and a universal training framework for mobile sensing.
 
 ```bibtex
 @inproceedings{xu2023practically,
