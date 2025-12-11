@@ -1,20 +1,98 @@
 {
-	"base_v1":
-	{
-		"feature_num" : 6,
-		"hidden": 72,
-		"hidden_ff": 144,
-		"n_layers": 4,
-		"n_heads": 4,
-		"seq_len": 120
-	},
-	"base_v2": {
-		"feature_num" : 9,
-		"hidden": 72,
-		"hidden_ff": 144,
-		"n_layers": 4,
-		"n_heads": 4,
-		"seq_len": 120
-	}
+    "base_v1": {
+        "feature_num": 6,
+        "hidden": 72,
+        "hidden_ff": 144,
+        "n_layers": 4,
+        "n_heads": 4,
+        "seq_len": 120
+    },
+    "base_v2": {
+        "feature_num": 9,
+        "hidden": 72,
+        "hidden_ff": 144,
+        "n_layers": 4,
+        "n_heads": 4,
+        "seq_len": 120
+    },
+    "base_v3": {
+        "feature_num": 9,
+        "hidden": 72,
+        "hidden_ff": 144,
+        "n_layers": 4,
+        "n_heads": 4,
+        "seq_len": 150
+    },
+    "base_v4": {
+        "feature_num": 6,
+        "hidden": 72,
+        "hidden_ff": 144,
+        "n_layers": 4,
+        "n_heads": 4,
+        "seq_len": 20
+    },
+    "base_v5": {
+        "feature_num": 3,
+        "hidden": 72,
+        "hidden_ff": 144,
+        "n_layers": 4,
+        "n_heads": 4,
+        "seq_len": 20
+    },
+    "base_v6": {
+        "feature_num": 6,
+        "hidden": 36,
+        "hidden_ff": 72,
+        "n_layers": 3,
+        "n_heads": 4,
+        "seq_len": 20
+    },
+    "base_v7": {
+        "feature_num": 6,
+        "hidden": 288,
+        "hidden_ff": 576,
+        "n_layers": 6,
+        "n_heads": 4,
+        "seq_len": 20
+    },
+    "base_v8": {
+        "feature_num": 6,
+        "hidden": 48,
+        "hidden_ff": 96,
+        "n_layers": 4,
+        "n_heads": 4,
+        "seq_len": 20
+    },
+    "base_v9": {
+        "feature_num": 6,
+        "hidden": 48,
+        "hidden_ff": 144,
+        "n_layers": 4,
+        "n_heads": 4,
+        "seq_len": 20
+    },
+    "base_v10": {
+        "feature_num": 6,
+        "hidden": 72,
+        "hidden_ff": 144,
+        "n_layers": 6,
+        "n_heads": 8,
+        "seq_len": 20
+    },
+    "base_v11": {
+        "feature_num": 6,
+        "hidden": 108,
+        "hidden_ff": 216,
+        "n_layers": 4,
+        "n_heads": 4,
+        "seq_len": 20
+    },
+    "base_zjs": {
+        "feature_num": 6,
+        "hidden": 72,
+        "hidden_ff": 144,
+        "n_layers": 4,
+        "n_heads": 4,
+        "seq_len": 100
+    }
 }
-

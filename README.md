@@ -27,7 +27,7 @@
 
 **LIMU-BERT-X** presents the first real-world, nationwide deployment of a **human activity recognition (HAR)** foundation model in the on-demand food delivery industry. Built on the LIMU-BERT sensor foundation model, this project demonstrates how large-scale IMU data, self-supervised learning, and lightweight on-device inference can transform operational decision-making at massive scale.
 
-Deployed with Ele.me over two years, LIMU-BERT-X now supports **500,000 couriers across 367 cities**, making **7.5 billion on-device predictions per day**. Leveraging **858M+ unlabeled IMU samples** for pretraining and minimal labeled data, the system achieves **over 90% activity recognition accuracy** nationwide and powers multiple business-critical applications:
+Deployed with Ele.me over two years, LIMU-BERT-X now supports **500,000 couriers across 367 cities**, making **7.5 billion on-device predictions per day**. Leveraging **1.43 million hours of real-world sensor data** for pretraining and minimal labeled data, the system achieves **over 90% activity recognition accuracy** nationwide and powers multiple business-critical applications:
 
 - 🚴 **Trajectory segmentation** for detecting riding, walking, and key delivery events  
 - ⬆️ **Elevation change detection** using IMU-only modeling  
@@ -36,7 +36,7 @@ Deployed with Ele.me over two years, LIMU-BERT-X now supports **500,000 couriers
 
 This project has been accepted to 📄 **[MobiCom 2025 Experience Paper](https://dl.acm.org/doi/10.1145/3680207.3765261)** and we open-source the pretrained LIMU-BERT model—trained on **1.43 million hours** of sensor data from 60K couriers and 1.1K phone models—providing a strong foundation for future research in mobile sensing and ubiquitous computing.
 
-This repository builds upon our earlier open-source implementation **[LIMU-BERT-Public](https://github.com/dapowan/LIMU-BERT-Public)**, which contains the official source code of our paper *LIMU-BERT*, published at 📄 **ACM SenSys 2021** and awarded 🏆 **Best Paper Runner-Up**. LIMU-BERT-X extends this foundation with large-scale real-world deployment, additional datasets, and industry-level model optimization.
+This repository builds upon our earlier open-source implementation **[LIMU-BERT-Public](https://github.com/dapowan/LIMU-BERT-Public)**, which contains the official source code of our paper *[LIMU-BERT](https://dl.acm.org/doi/abs/10.1145/3485730.3485937)*, published at 📄 **ACM SenSys 2021** and awarded 🏆 **Best Paper Runner-Up**. LIMU-BERT-X extends this foundation with large-scale real-world deployment, additional datasets, and industry-level model optimization.
 
 
 ---
@@ -51,9 +51,33 @@ pip install -r requirements.txt
 
 ## 📘 Instructions
 
-The detailed instructions for training, evaluation, and deployment will be **released soon**.
+Before diving into this repository, we recommend readers have a basic understanding of **self-supervised learning** and the overall design philosophy behind LIMU-BERT. For background and foundational concepts, you may refer to:
 
-In the meantime, you may refer to our previous open-source implementation **[LIMU-BERT-Public](https://github.com/dapowan/LIMU-BERT-Public)** for more details on model structure, preprocessing pipelines, and training procedures.
+- 📄 **[Our original LIMU-BERT paper (SenSys 2021)](https://dl.acm.org/doi/abs/10.1145/3485730.3485937)** — introduces the core self-supervised learning framework for IMU sensing  
+- 📄 **[Our latest experience paper (MobiCom 2025)](https://dl.acm.org/doi/10.1145/3680207.3765261)** — details the large-scale real-world deployment and commercial adoption of the model
+
+### Training Workflow
+
+In our framework, the training pipeline consists of **two phases**:
+
+- **1. Self-Supervised Training Phase**:
+Train **LIMU-BERT** using large-scale **unlabeled IMU data** with [`pretrain.py`](./pretrain.py). This phase learns generalizable IMU representations using contrastive and predictive objectives.
+
+- **2. Supervised Training Phase**: Train a downstream **classifier** on labeled IMU data using the pretrained model with [`bert_classifier.py`](./bert_classifier.py). This phase adapts LIMU-BERT to specific tasks such as activity recognition.
+
+As we have already pretrained **LIMU-BERT-X** using extensive unlabeled IMU data, the pretrained weights are provided in  
+[`limu_bert_x.pt`](./weights/limu_bert_x.pt). You may **skip the self-supervised training phase** and directly use these pretrained weights for downstream tasks. Alternatively, you can **fine-tune LIMU-BERT-X on your own dataset** to better handle domain shift.
+
+### Self-Supervised Training Phase (Optional)
+Run [`pretrain.py`](./pretrain.py). Example:
+
+```bash
+python pretrain.py v4 hhar 20_120 -s limu_v1 -f limu_bert_x
+```
+
+This command fine-tunes LIMU-BERT-X using the configuration defined in the the _based_v4_ of [limu_bert.json](./config/limu_bert.json), with the hhar dataset "data_20_120.npy" and "label_20_120.npy". The trained model will be saved as "limu_v1.pt" in the _saved/pretrain_base_hhar_20_120_ folder. The mask and train settings are defined in the [mask.json](./config/mask.json) and [pretrain.json](./config/pretrain.json), respectively.
+
+Note that **LIMU-BERT-X** uses a sequence length of **20**, which is slightly different from the original **LIMU-BERT**, which uses a sequence length of **120**.
 
 ---
 
