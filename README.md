@@ -65,8 +65,7 @@ Train **LIMU-BERT** using large-scale **unlabeled IMU data** with [`pretrain.py`
 
 - **2. Supervised Training Phase**: Train a downstream **classifier** on labeled IMU data using the pretrained model with [`bert_classifier.py`](./bert_classifier.py). This phase adapts LIMU-BERT to specific tasks such as activity recognition.
 
-As we have already pretrained **LIMU-BERT-X** using extensive unlabeled IMU data, the pretrained weights are provided in  
-[`limu_bert_x.pt`](./weights/limu_bert_x.pt). You may **skip the self-supervised training phase** and directly use these pretrained weights for downstream tasks. Alternatively, you can **fine-tune LIMU-BERT-X on your own dataset** to better handle domain shift.
+As we have already pretrained **LIMU-BERT-X** using extensive unlabeled IMU data, the pretrained weights are provided in [`limu_bert_x.pt`](./weights/limu_bert_x.pt). You may **skip the self-supervised training phase** and directly use these pretrained weights for downstream tasks. Alternatively, you can **fine-tune LIMU-BERT-X on your own dataset** to better handle domain shift.
 
 ### Self-Supervised Training Phase (Optional)
 Run [`pretrain.py`](./pretrain.py). Example:
