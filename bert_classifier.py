@@ -3,14 +3,15 @@ import argparse
 import numpy as np
 import torch
 import torch.nn as nn
-from torch.utils.data import Dataset, TensorDataset, DataLoader
+from torch.utils.data import DataLoader
 
 import train
 from config import load_dataset_label_names
 from models import BERTClassifier, fetch_classifier
 
 from statistic import stat_acc_f1
-from utils import get_device, handle_argv, IMUDataset, load_bert_classifier_data_config, Preprocess4Normalization, Preprocess4Rotation, Preprocess4Scale, prepare_classifier_dataset_gw
+from utils import get_device, handle_argv, IMUDataset, load_bert_classifier_data_config, Preprocess4Normalization, \
+    prepare_classifier_dataset_gw, Preprocess4Sample, prepare_classifier_dataset
 
 
 class focal_loss(nn.Module):
@@ -52,11 +53,10 @@ def bert_classify(args, label_index, training_rate, label_rate, frozen_bert=Fals
     label_names, label_num = load_dataset_label_names(dataset_cfg, label_index)
 
     data_train, label_train, data_vali, label_vali, data_test, label_test \
-        = prepare_classifier_dataset_gw(data, labels, label_index=label_index, training_rate=training_rate, label_rate=label_rate, merge=model_classifier_cfg.seq_len, seed=train_cfg.seed, balance=balance)
-    pipeline_train = [Preprocess4Normalization(model_bert_cfg.feature_num), Preprocess4Rotation()]
+        = prepare_classifier_dataset(data, labels, label_index=label_index, training_rate=training_rate, label_rate=label_rate, merge=model_classifier_cfg.seq_len, seed=train_cfg.seed, balance=balance)
+    pipeline_train = [Preprocess4Normalization(model_bert_cfg.feature_num), Preprocess4Sample(model_bert_cfg.seq_len)] # ,Preprocess4Rotation()
     pipeline = [Preprocess4Normalization(model_bert_cfg.feature_num)]
     data_set_train = IMUDataset(data_train, label_train, pipeline=pipeline)
-    print(data_set_train.pipeline)
     data_loader_train = DataLoader(data_set_train, shuffle=True, batch_size=train_cfg.batch_size, num_workers=8)
     data_set_test = IMUDataset(data_test, label_test, pipeline=pipeline)
     data_loader_test = DataLoader(data_set_test, shuffle=False, batch_size=train_cfg.batch_size, num_workers=4)
@@ -94,7 +94,7 @@ def bert_classify(args, label_index, training_rate, label_rate, frozen_bert=Fals
 
 
 if __name__ == "__main__":
-    train_rate = 0.9
+    train_rate = 0.8
     label_rate = 1.0
     balance = False
     frozen_bert = False

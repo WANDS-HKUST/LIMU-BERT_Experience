@@ -584,26 +584,26 @@ class Preprocess4Normalization(Pipeline):
 
 
 
-class Preprocess4Rotation(Pipeline):
-    def __init__(self, sensor_dimen=3):
-        super().__init__()
-        self.sensor_dimen = sensor_dimen
-        print('完成初始化 utils 中旋转数据增强方法')
-
-    def __call__(self, instance):
-        return self.rotate_random(instance)
-
-    def rotate_random(self, instance):
-        # return instance 
-        # print('调用随机旋转方法')
-        # print(instance)
-        instance_new = instance.reshape(instance.shape[0], instance.shape[1] // self.sensor_dimen, self.sensor_dimen)
-        rotation_matrix = special_ortho_group.rvs(self.sensor_dimen)
-        for i in range(instance_new.shape[1]):
-            instance_new[:, i, :] = np.dot(instance_new[:, i, :], rotation_matrix)
-        re = instance_new.reshape(instance.shape[0], instance.shape[1])
-        # print(re)
-        return re
+# class Preprocess4Rotation(Pipeline):
+#     def __init__(self, sensor_dimen=3):
+#         super().__init__()
+#         self.sensor_dimen = sensor_dimen
+#         print('完成初始化 utils 中旋转数据增强方法')
+#
+#     def __call__(self, instance):
+#         return self.rotate_random(instance)
+#
+#     def rotate_random(self, instance):
+#         # return instance
+#         # print('调用随机旋转方法')
+#         # print(instance)
+#         instance_new = instance.reshape(instance.shape[0], instance.shape[1] // self.sensor_dimen, self.sensor_dimen)
+#         rotation_matrix = special_ortho_group.rvs(self.sensor_dimen)
+#         for i in range(instance_new.shape[1]):
+#             instance_new[:, i, :] = np.dot(instance_new[:, i, :], rotation_matrix)
+#         re = instance_new.reshape(instance.shape[0], instance.shape[1])
+#         # print(re)
+#         return re
 
 
 class Preprocess4Scale(Pipeline):

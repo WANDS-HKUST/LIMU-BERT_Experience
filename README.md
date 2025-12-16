@@ -71,12 +71,24 @@ As we have already pretrained **LIMU-BERT-X** using extensive unlabeled IMU data
 Run [`pretrain.py`](./pretrain.py). Example:
 
 ```bash
-python pretrain.py v4 hhar 20_120 -s limu_v1 -f limu_bert_x
+python pretrain.py v4 hhar 20_120 -s limu_pretrain -f limu_bert_x
 ```
 
-This command fine-tunes LIMU-BERT-X using the configuration defined in the the _based_v4_ of [limu_bert.json](./config/limu_bert.json), with the hhar dataset "data_20_120.npy" and "label_20_120.npy". The trained model will be saved as "limu_v1.pt" in the _saved/pretrain_base_hhar_20_120_ folder. The mask and train settings are defined in the [mask.json](./config/mask.json) and [pretrain.json](./config/pretrain.json), respectively.
+This command fine-tunes LIMU-BERT-X using the configuration defined in the the _based_v4_ of [limu_bert.json](./config/limu_bert.json), with the hhar dataset "data_20_120.npy" and "label_20_120.npy". The trained model will be saved as "limu_pretrain.pt" in the _saved/pretrain_base_hhar_20_120_ folder. The mask and train settings are defined in the [mask.json](./config/mask.json) and [pretrain.json](./config/pretrain.json), respectively. After pretraining, copy `limu_pretrain.pt` to the `weights/` directory for subsequent fine-tuning.
 
 Note that **LIMU-BERT-X** uses a sequence length of **20**, which is different from the original **LIMU-BERT**, which uses a sequence length of **120**.
+
+### Supervised Training Phase (Optional)
+Run [`bert_classifier.py`](./pretrain.py). Example:
+
+Example:
+```
+python bert_classifier.py v4_v2 hhar 20_120 -f limu_pretrain -s hhar_classifier -l 2
+```
+For this command, we will train a composite classifier with the pretrained LIMU-BERT-X and GRU classifier. The pretrained model is specified by `-f limu_pretrain`. If you skip the self-supervised training phase, you may replace it with `-f limu_bert_x`.
+, The settings of the classifier are defined in the _gru_v2_ of [`classifier.json`](./config/classifier.json), while train hyperparameters are defined in the [`bert_classifier_train.json`](./config/bert_classifier_train.json). 
+Note that `v4_v2` specifies two model versions, corresponding to the LIMU-BERT backbone and the GRU classifier, respectively. The trained LIMU-GRU classifier will be saved as "hhar_classifier.pt" in the _saved/bert_classifier_base_uci_20_120_ folder.
+
 
 ---
 
