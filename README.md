@@ -71,7 +71,7 @@ As we have already pretrained **LIMU-BERT-X** using extensive unlabeled IMU data
 Run [`pretrain.py`](./pretrain.py). Example:
 
 ```bash
-python pretrain.py v4 hhar 20_120 -s limu_pretrain -f limu_bert_x
+python pretrain.py v4 hhar 20_120 -f limu_bert_x -s limu_pretrain 
 ```
 
 This command fine-tunes LIMU-BERT-X using the configuration defined in the the _based_v4_ of [limu_bert.json](./config/limu_bert.json), with the hhar dataset "data_20_120.npy" and "label_20_120.npy". The trained model will be saved as "limu_pretrain.pt" in the _saved/pretrain_base_hhar_20_120_ folder. The mask and train settings are defined in the [mask.json](./config/mask.json) and [pretrain.json](./config/pretrain.json), respectively. After pretraining, copy `limu_pretrain.pt` to the `weights/` directory for subsequent fine-tuning.
