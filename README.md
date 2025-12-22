@@ -78,7 +78,7 @@ This command fine-tunes LIMU-BERT-X using the configuration defined in the the _
 
 Note that **LIMU-BERT-X** uses a sequence length of **20**, which is different from the original **LIMU-BERT**, which uses a sequence length of **120**.
 
-### Supervised Training Phase (Optional)
+### Supervised Training Phase
 Run [`bert_classifier.py`](./pretrain.py). Example:
 
 Example:
